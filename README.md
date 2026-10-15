@@ -20,6 +20,7 @@ Open http://localhost:5173. Set `PORT` to use another port.
 - Countdown to the celebrations on January 30, 2027 at 11am in Virginia
 - Venue map link, event dress codes, RSVP and the wedding planner’s company and email contact
 - Named party RSVPs, per-guest event choices, Supabase storage and Gmail confirmation emails
+- A room-block booking button appears only after a successful RSVP; confirmation emails include the same booking next step
 - Scroll reveals, confetti, responsive layout, and reduced-motion support
 
 ## Editing

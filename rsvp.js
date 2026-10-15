@@ -9,6 +9,7 @@ const partySummary = $("#rsvp-party-summary");
 const rsvpConfig = window.WEDDING_CONFIG || {};
 const rsvpEndpoint = rsvpConfig.rsvpEndpoint;
 const isSupabase = rsvpConfig.rsvpProvider === "supabase";
+const roomBlockUrl = "https://book.passkey.com/e/51354114";
 const receiptPrefix = "nisha-sajal:rsvp:confirmed:v1:";
 const requestPrefix = "nisha-sajal:rsvp:request:v2:";
 const confirmedNames = new Set();
@@ -33,6 +34,8 @@ const rsvpLabels = {
     song: "What song will get you on the dance floor?", names: "Names listed", attendingCount: "Attending", plusOnes: "Additional guests attending",
     privateNote: "Your reply will be saved privately for the wedding organizers.", localNote: "Development preview: replies are saved locally.",
     thankYou: "Thank You", confirmation: "Your RSVP is confirmed", declined: "Unable to attend", summary: "Your party’s attendance",
+    nextStep: "Next step", bookStay: "Book your stay", bookRoom: "Book your room",
+    roomBlockHelp: "Staying at Lansdowne Resort? Reserve your room through our wedding room block.",
     haldi: "Haldi", sangeet: "Sangeet", wedding: "Wedding & lunch",
     haldiDetails: "Jan 30 · 11am · Terrace Ballroom", sangeetDetails: "Jan 30 · 6–7pm: Cocktail hour; 7pm onwards: Dinner · Clubhouse Ballroom", weddingDetails: "Jan 31 · 10am, followed by lunch · Grand Ballroom",
   },
@@ -45,6 +48,8 @@ const rsvpLabels = {
     song: "कौन सा गाना आपको डांस फ्लोर पर लाएगा?", names: "कुल नाम", attendingCount: "आने वाले", plusOnes: "आने वाले अतिरिक्त मेहमान",
     privateNote: "आपका उत्तर शादी के आयोजकों के लिए निजी रूप से सहेजा जाएगा।", localNote: "डेवलपमेंट प्रीव्यू: उत्तर स्थानीय रूप से सहेजे जाते हैं।",
     thankYou: "धन्यवाद", confirmation: "आपके RSVP की पुष्टि हो गई है", declined: "नहीं आ सकेंगे", summary: "आपके समूह की उपस्थिति",
+    nextStep: "अगला कदम", bookStay: "अपने ठहरने की बुकिंग करें", bookRoom: "कमरा बुक करें",
+    roomBlockHelp: "लैंसडाउन रिसॉर्ट में ठहरना चाहते हैं? हमारी शादी के लिए आरक्षित कमरों में से अपना कमरा बुक करें।",
     haldi: "हल्दी", sangeet: "संगीत", wedding: "विवाह और दोपहर का भोजन",
     haldiDetails: "३० जनवरी · सुबह ११ बजे · टेरेस बॉलरूम", sangeetDetails: "३० जनवरी · शाम ६–७ बजे: कॉकटेल आवर; शाम ७ बजे से: रात्रि भोज · क्लबहाउस बॉलरूम", weddingDetails: "३१ जनवरी · सुबह १० बजे, फिर दोपहर का भोजन · ग्रैंड बॉलरूम",
   },
@@ -231,6 +236,15 @@ function renderConfirmation() {
   const counts = document.createElement("p"); counts.className = "rsvp-confirmed-counts";
   counts.textContent = ["haldi", "sangeet", "wedding"].map((id) => `${copy[id]}: ${submittedData.guests.filter((g) => g.events.includes(id)).length}`).join(" · ");
   confirmationCard.append(counts, status);
+  const nextStep = document.createElement("section"); nextStep.className = "rsvp-next-step";
+  nextStep.setAttribute("aria-labelledby", "rsvp-room-heading");
+  const stepLabel = document.createElement("p"); stepLabel.className = "eyebrow"; stepLabel.textContent = copy.nextStep;
+  const roomHeading = document.createElement("h4"); roomHeading.id = "rsvp-room-heading"; roomHeading.textContent = copy.bookStay;
+  const roomHelp = document.createElement("p"); roomHelp.className = "rsvp-room-help"; roomHelp.textContent = copy.roomBlockHelp;
+  const roomLink = document.createElement("a"); roomLink.id = "rsvp-room-block"; roomLink.className = "rsvp-room-button";
+  roomLink.href = roomBlockUrl; roomLink.target = "_blank"; roomLink.rel = "noopener noreferrer";
+  roomLink.textContent = copy.bookRoom;
+  nextStep.append(stepLabel, roomHeading, roomHelp, roomLink); confirmationCard.append(nextStep);
 }
 addGuestButton.addEventListener("click", addGuest);
 form.addEventListener("input", () => { if (!submitting && rsvpState !== "idle") setRsvpState("idle"); });

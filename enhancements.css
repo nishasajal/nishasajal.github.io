@@ -143,6 +143,52 @@ button:disabled {
 .rsvp-confirmed-guest strong { color: #1e2a4f; font-size: 15px; }
 .rsvp-confirmed-guest p, .rsvp-confirmed-counts { color: #7a6e7e; font-size: 12px; line-height: 1.8; margin-top: 6px; }
 .rsvp-confirmed-counts { margin: 20px 0; }
+.rsvp-next-step {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #b8902f66;
+  text-align: center;
+}
+.rsvp-next-step h4 {
+  margin-top: 8px;
+  color: #1e2a4f;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+.rsvp-room-help {
+  margin-top: 10px;
+  color: #7a6e7e;
+  font-size: 13px;
+  line-height: 1.7;
+  text-wrap: balance;
+}
+.rsvp-room-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 18px;
+  padding: 12px 18px;
+  border: 1px solid #1e2a4f;
+  border-radius: 4px;
+  background: #1e2a4f;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 180ms, box-shadow 180ms, transform 180ms;
+}
+.rsvp-room-button:hover,
+.rsvp-room-button:focus-visible {
+  background: #34436c;
+  box-shadow: 0 5px 15px #1e2a4f26;
+  transform: translateY(-1px);
+}
+.rsvp-room-button:active { transform: translateY(0); }
 #rsvp {
   padding-bottom: 40px;
 }

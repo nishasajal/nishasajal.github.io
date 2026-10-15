@@ -20,6 +20,12 @@ test('confirmation includes escaped names, each guest choice and correct event l
  for(const label of ['Unable to attend','Haldi','Wedding &amp; lunch','Terrace Ballroom','Clubhouse Ballroom','Grand Ballroom','January 31, 2027','#SajNi'])assert.ok(message.html.includes(label),label);
  assert.match(message.text,/Guest Two: Unable to attend/);
 });
+test('confirmation includes the room-block next step in HTML and plain text',()=>{
+ const {context}=worker();const message=context.weddingConfirmation_(job);
+ assert.match(message.html, /href="https:\/\/book\.passkey\.com\/e\/51354114"[^>]*>Book your room<\/a>/);
+ assert.match(message.text, /Next step: Book your stay[\s\S]*https:\/\/book\.passkey\.com\/e\/51354114/);
+ assert.ok(message.html.indexOf('Book your room') < message.html.indexOf('Saturday, January 30'));
+});
 test('sends one message and records completion',()=>{
  const {context,messages,calls}=worker();context.sendWeddingConfirmations();
  assert.equal(messages.length,1);assert.equal(messages[0].to,'qa@example.com');

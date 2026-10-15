@@ -4,7 +4,7 @@ The private [Google Apps Script project](https://script.google.com/home/projects
 
 The one-minute time trigger reads pending submissions from Supabase using a private worker key stored only in Script Properties. Supabase stores its SHA-256 hash. The site only has the publishable key and cannot read queued replies, stored guests or the worker setting. The script uses MailApp to send email; it does not read the inbox.
 
-Each receipt includes every named guest's response, event totals, the event dates, rooms, attire, resort address and invitation link. Names are HTML-escaped. One receipt goes to the party's contact email.
+Each receipt includes every named guest's response, a next-step booking button for the [wedding room block](https://book.passkey.com/e/51354114), event totals, the event dates, rooms, attire, resort address and invitation link. The room-block URL is included in both HTML and plain-text email. Names are HTML-escaped. One receipt goes to the party's contact email.
 
 ## Setup or recovery
 
