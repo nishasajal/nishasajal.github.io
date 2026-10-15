@@ -158,13 +158,6 @@ button:disabled {
   line-height: 1.25;
   text-wrap: balance;
 }
-.rsvp-room-help {
-  margin-top: 10px;
-  color: #7a6e7e;
-  font-size: 13px;
-  line-height: 1.7;
-  text-wrap: balance;
-}
 .rsvp-room-button {
   display: flex;
   justify-content: center;
@@ -190,13 +183,6 @@ button:disabled {
   transform: translateY(-1px);
 }
 .rsvp-room-button:active { transform: translateY(0); }
-.rsvp-room-note {
-  margin-top: 10px;
-  color: #7a6e7e;
-  font-size: 12px;
-  line-height: 1.6;
-  text-wrap: balance;
-}
 .rsvp-room-before-confirm {
   margin-top: 4px;
   padding: 18px;

@@ -35,8 +35,6 @@ const rsvpLabels = {
     privateNote: "Your reply will be saved privately for the wedding organizers.", localNote: "Development preview: replies are saved locally.",
     thankYou: "Thank You", confirmation: "Your RSVP is confirmed", declined: "Unable to attend", summary: "Your party’s attendance",
     nextStep: "Next step", bookStay: "Hotel room booking", bookRoom: "Book a hotel room",
-    roomBookingNote: "Hotel reservations are separate from your wedding RSVP.",
-    roomBlockHelp: "Staying at Lansdowne Resort? Reserve your room through our wedding room block.",
     haldi: "Haldi", sangeet: "Sangeet", wedding: "Wedding & lunch",
     haldiDetails: "Jan 30 · 11am · Terrace Ballroom", sangeetDetails: "Jan 30 · 6–7pm: Cocktail hour; 7pm onwards: Dinner · Clubhouse Ballroom", weddingDetails: "Jan 31 · 10am, followed by lunch · Grand Ballroom",
   },
@@ -50,8 +48,6 @@ const rsvpLabels = {
     privateNote: "आपका उत्तर शादी के आयोजकों के लिए निजी रूप से सहेजा जाएगा।", localNote: "डेवलपमेंट प्रीव्यू: उत्तर स्थानीय रूप से सहेजे जाते हैं।",
     thankYou: "धन्यवाद", confirmation: "आपके RSVP की पुष्टि हो गई है", declined: "नहीं आ सकेंगे", summary: "आपके समूह की उपस्थिति",
     nextStep: "अगला कदम", bookStay: "होटल के कमरे की बुकिंग", bookRoom: "होटल का कमरा बुक करें",
-    roomBookingNote: "होटल की बुकिंग और शादी का RSVP अलग-अलग हैं।",
-    roomBlockHelp: "लैंसडाउन रिसॉर्ट में ठहरना चाहते हैं? हमारी शादी के लिए आरक्षित कमरों में से अपना कमरा बुक करें।",
     haldi: "हल्दी", sangeet: "संगीत", wedding: "विवाह और दोपहर का भोजन",
     haldiDetails: "३० जनवरी · सुबह ११ बजे · टेरेस बॉलरूम", sangeetDetails: "३० जनवरी · शाम ६–७ बजे: कॉकटेल आवर; शाम ७ बजे से: रात्रि भोज · क्लबहाउस बॉलरूम", weddingDetails: "३१ जनवरी · सुबह १० बजे, फिर दोपहर का भोजन · ग्रैंड बॉलरूम",
   },
@@ -242,12 +238,10 @@ function renderConfirmation() {
   nextStep.setAttribute("aria-labelledby", "rsvp-room-heading");
   const stepLabel = document.createElement("p"); stepLabel.className = "eyebrow"; stepLabel.textContent = copy.nextStep;
   const roomHeading = document.createElement("h4"); roomHeading.id = "rsvp-room-heading"; roomHeading.textContent = copy.bookStay;
-  const roomHelp = document.createElement("p"); roomHelp.className = "rsvp-room-help"; roomHelp.textContent = copy.roomBlockHelp;
   const roomLink = document.createElement("a"); roomLink.id = "rsvp-room-block"; roomLink.className = "rsvp-room-button";
   roomLink.href = roomBlockUrl; roomLink.target = "_blank"; roomLink.rel = "noopener noreferrer";
   roomLink.textContent = copy.bookRoom;
-  const roomNote = document.createElement("p"); roomNote.className = "rsvp-room-note"; roomNote.textContent = copy.roomBookingNote;
-  nextStep.append(stepLabel, roomHeading, roomHelp, roomLink, roomNote); confirmationCard.append(nextStep);
+  nextStep.append(stepLabel, roomHeading, roomLink); confirmationCard.append(nextStep);
 }
 addGuestButton.addEventListener("click", addGuest);
 form.addEventListener("input", () => { if (!submitting && rsvpState !== "idle") setRsvpState("idle"); });
