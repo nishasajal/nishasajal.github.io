@@ -32,11 +32,11 @@
       crossorigin="anonymous"
     />
     <link rel="icon" href="./assets/sajni-monogram.png" type="image/png" />
-    <link rel="stylesheet" href="./enhancements.css?v=room-block" />
+    <link rel="stylesheet" href="./enhancements.css?v=room-before-rsvp" />
     <script src="./config.js" defer></script>
     <script src="./event-audio.js?v=sajni-continuous" defer></script>
     <script src="./app.js?v=sangeet-details" defer></script>
-    <script src="./rsvp.js?v=room-block" defer></script>
+    <script src="./rsvp.js?v=room-before-rsvp" defer></script>
   </head>
   <body>
     <main class="relative min-h-screen bg-background">
@@ -473,7 +473,13 @@
               <span class="eyebrow" data-rsvp-label="song">What song will get you on the dance floor?</span>
               <input name="song" maxlength="2000" class="w-full rounded-sm border border-input bg-card px-4 py-3 text-sm text-foreground outline-none focus:border-aegean" />
             </label>
-            <button type="submit" id="rsvp-submit-btn" aria-describedby="rsvp-status" class="mt-3 rounded-sm bg-aegean px-6 py-4 text-xs tracking-[0.28em] text-primary-foreground uppercase">Confirm</button>
+            <section class="rsvp-next-step rsvp-room-before-confirm" aria-labelledby="rsvp-room-heading">
+              <h3 id="rsvp-room-heading" data-rsvp-label="bookStay">Hotel room booking</h3>
+              <p class="rsvp-room-help" data-rsvp-label="roomBlockHelp">Staying at Lansdowne Resort? Reserve your room through our wedding room block.</p>
+              <a id="rsvp-room-block" class="rsvp-room-button" href="https://book.passkey.com/e/51354114" target="_blank" rel="noopener noreferrer" data-rsvp-label="bookRoom">Book a hotel room</a>
+              <p class="rsvp-room-note" data-rsvp-label="roomBookingNote">Hotel reservations are separate from your wedding RSVP.</p>
+            </section>
+            <button type="submit" id="rsvp-submit-btn" aria-describedby="rsvp-status" class="mt-3 rounded-sm bg-aegean px-6 py-4 text-xs tracking-[0.28em] text-primary-foreground uppercase">Confirm RSVP</button>
             <p id="rsvp-status" class="rsvp-status" role="status" aria-live="polite" aria-atomic="true"></p>
             <p id="rsvp-note" class="text-xs text-muted-foreground"></p>
           </form>

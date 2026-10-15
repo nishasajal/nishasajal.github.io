@@ -149,6 +149,7 @@ button:disabled {
   border-top: 1px solid #b8902f66;
   text-align: center;
 }
+.rsvp-next-step h3,
 .rsvp-next-step h4 {
   margin-top: 8px;
   color: #1e2a4f;
@@ -189,6 +190,28 @@ button:disabled {
   transform: translateY(-1px);
 }
 .rsvp-room-button:active { transform: translateY(0); }
+.rsvp-room-note {
+  margin-top: 10px;
+  color: #7a6e7e;
+  font-size: 12px;
+  line-height: 1.6;
+  text-wrap: balance;
+}
+.rsvp-room-before-confirm {
+  margin-top: 4px;
+  padding: 18px;
+  border: 1px solid #b8902f66;
+  border-radius: 6px;
+  background: #f8f5ee;
+}
+.rsvp-room-before-confirm h3 { margin-top: 0; font-size: 26px; }
+.rsvp-room-before-confirm .rsvp-room-button {
+  background: transparent;
+  color: #1e2a4f;
+}
+.rsvp-room-before-confirm .rsvp-room-button:hover,
+.rsvp-room-before-confirm .rsvp-room-button:focus-visible { background: #efe7d9; }
+
 #rsvp {
   padding-bottom: 40px;
 }

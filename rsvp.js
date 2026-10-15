@@ -34,7 +34,8 @@ const rsvpLabels = {
     song: "What song will get you on the dance floor?", names: "Names listed", attendingCount: "Attending", plusOnes: "Additional guests attending",
     privateNote: "Your reply will be saved privately for the wedding organizers.", localNote: "Development preview: replies are saved locally.",
     thankYou: "Thank You", confirmation: "Your RSVP is confirmed", declined: "Unable to attend", summary: "Your party’s attendance",
-    nextStep: "Next step", bookStay: "Book your stay", bookRoom: "Book your room",
+    nextStep: "Next step", bookStay: "Hotel room booking", bookRoom: "Book a hotel room",
+    roomBookingNote: "Hotel reservations are separate from your wedding RSVP.",
     roomBlockHelp: "Staying at Lansdowne Resort? Reserve your room through our wedding room block.",
     haldi: "Haldi", sangeet: "Sangeet", wedding: "Wedding & lunch",
     haldiDetails: "Jan 30 · 11am · Terrace Ballroom", sangeetDetails: "Jan 30 · 6–7pm: Cocktail hour; 7pm onwards: Dinner · Clubhouse Ballroom", weddingDetails: "Jan 31 · 10am, followed by lunch · Grand Ballroom",
@@ -48,7 +49,8 @@ const rsvpLabels = {
     song: "कौन सा गाना आपको डांस फ्लोर पर लाएगा?", names: "कुल नाम", attendingCount: "आने वाले", plusOnes: "आने वाले अतिरिक्त मेहमान",
     privateNote: "आपका उत्तर शादी के आयोजकों के लिए निजी रूप से सहेजा जाएगा।", localNote: "डेवलपमेंट प्रीव्यू: उत्तर स्थानीय रूप से सहेजे जाते हैं।",
     thankYou: "धन्यवाद", confirmation: "आपके RSVP की पुष्टि हो गई है", declined: "नहीं आ सकेंगे", summary: "आपके समूह की उपस्थिति",
-    nextStep: "अगला कदम", bookStay: "अपने ठहरने की बुकिंग करें", bookRoom: "कमरा बुक करें",
+    nextStep: "अगला कदम", bookStay: "होटल के कमरे की बुकिंग", bookRoom: "होटल का कमरा बुक करें",
+    roomBookingNote: "होटल की बुकिंग और शादी का RSVP अलग-अलग हैं।",
     roomBlockHelp: "लैंसडाउन रिसॉर्ट में ठहरना चाहते हैं? हमारी शादी के लिए आरक्षित कमरों में से अपना कमरा बुक करें।",
     haldi: "हल्दी", sangeet: "संगीत", wedding: "विवाह और दोपहर का भोजन",
     haldiDetails: "३० जनवरी · सुबह ११ बजे · टेरेस बॉलरूम", sangeetDetails: "३० जनवरी · शाम ६–७ बजे: कॉकटेल आवर; शाम ७ बजे से: रात्रि भोज · क्लबहाउस बॉलरूम", weddingDetails: "३१ जनवरी · सुबह १० बजे, फिर दोपहर का भोजन · ग्रैंड बॉलरूम",
@@ -56,37 +58,37 @@ const rsvpLabels = {
 };
 const rsvpCopy = {
   en: {
-    idle: ["Confirm", ""], checking: ["Checking…", "Checking your RSVP…"],
+    idle: ["Confirm RSVP", ""], checking: ["Checking…", "Checking your RSVP…"],
     sending: ["Sending…", "Saving your RSVP. Please keep this page open."],
     slow: ["Sending…", "Still saving your RSVP. Please keep this page open."],
     error: ["Try again", "Unable to save your reply. Please check your connection and try again."],
     uncertain: ["Try again", "We couldn’t confirm the save. Please try again; the same reply won’t be stored twice."],
     duplicate: ["Already received", "An RSVP for a guest in this party has already been received in this browser. Please contact the wedding organizers to make a change."],
-    invalid: ["Confirm", "Please complete the required fields for each guest."],
-    invalidName: ["Confirm", "Please enter a full name for every guest."],
-    repeatedName: ["Confirm", "Please list each guest only once."],
-    invalidGuests: ["Confirm", "Please include between 1 and 100 named guests."],
-    invalidAttendance: ["Confirm", "Please choose whether each guest will attend."],
-    invalidEvents: ["Confirm", "Please choose at least one event for each guest who is attending."],
-    invalidSong: ["Confirm", "Please keep the song request under 2,000 characters."],
-    invalidEmail: ["Confirm", "Please enter a valid email address."],
+    invalid: ["Confirm RSVP", "Please complete the required fields for each guest."],
+    invalidName: ["Confirm RSVP", "Please enter a full name for every guest."],
+    repeatedName: ["Confirm RSVP", "Please list each guest only once."],
+    invalidGuests: ["Confirm RSVP", "Please include between 1 and 100 named guests."],
+    invalidAttendance: ["Confirm RSVP", "Please choose whether each guest will attend."],
+    invalidEvents: ["Confirm RSVP", "Please choose at least one event for each guest who is attending."],
+    invalidSong: ["Confirm RSVP", "Please keep the song request under 2,000 characters."],
+    invalidEmail: ["Confirm RSVP", "Please enter a valid email address."],
     success: ["RSVP received", isSupabase ? "Your reply has been saved. A confirmation email is queued for the address you provided." : "Your reply has been received. Thank you for letting us know."],
   },
   hi: {
-    idle: ["पुष्टि करें", ""], checking: ["जाँच हो रही है…", "आपके RSVP की जाँच हो रही है…"],
+    idle: ["RSVP की पुष्टि करें", ""], checking: ["जाँच हो रही है…", "आपके RSVP की जाँच हो रही है…"],
     sending: ["भेजा जा रहा है…", "आपका RSVP सहेजा जा रहा है। कृपया यह पेज खुला रखें।"],
     slow: ["भेजा जा रहा है…", "आपका RSVP अभी सहेजा जा रहा है। कृपया यह पेज खुला रखें।"],
     error: ["फिर कोशिश करें", "आपका उत्तर सहेजा नहीं जा सका। कृपया अपना कनेक्शन जाँचें और फिर प्रयास करें।"],
     uncertain: ["फिर कोशिश करें", "उत्तर सहेजे जाने की पुष्टि नहीं हो सकी। दोबारा प्रयास करें; वही उत्तर दो बार नहीं सहेजा जाएगा।"],
     duplicate: ["उत्तर प्राप्त हो चुका है", "इस समूह के किसी मेहमान का RSVP इस ब्राउज़र से पहले ही प्राप्त हो चुका है। बदलाव के लिए आयोजकों से संपर्क करें।"],
-    invalid: ["पुष्टि करें", "कृपया हर मेहमान की आवश्यक जानकारी भरें।"],
-    invalidName: ["पुष्टि करें", "कृपया हर मेहमान का पूरा नाम दर्ज करें।"],
-    repeatedName: ["पुष्टि करें", "कृपया हर मेहमान का नाम केवल एक बार लिखें।"],
-    invalidGuests: ["पुष्टि करें", "कृपया १ से १०० मेहमानों के नाम दर्ज करें।"],
-    invalidAttendance: ["पुष्टि करें", "कृपया बताएँ कि हर मेहमान आएगा या नहीं।"],
-    invalidEvents: ["पुष्टि करें", "आने वाले हर मेहमान के लिए कम से कम एक कार्यक्रम चुनें।"],
-    invalidSong: ["पुष्टि करें", "कृपया गाने का अनुरोध २,००० अक्षरों से कम रखें।"],
-    invalidEmail: ["पुष्टि करें", "कृपया सही ईमेल पता दर्ज करें।"],
+    invalid: ["RSVP की पुष्टि करें", "कृपया हर मेहमान की आवश्यक जानकारी भरें।"],
+    invalidName: ["RSVP की पुष्टि करें", "कृपया हर मेहमान का पूरा नाम दर्ज करें।"],
+    repeatedName: ["RSVP की पुष्टि करें", "कृपया हर मेहमान का नाम केवल एक बार लिखें।"],
+    invalidGuests: ["RSVP की पुष्टि करें", "कृपया १ से १०० मेहमानों के नाम दर्ज करें।"],
+    invalidAttendance: ["RSVP की पुष्टि करें", "कृपया बताएँ कि हर मेहमान आएगा या नहीं।"],
+    invalidEvents: ["RSVP की पुष्टि करें", "आने वाले हर मेहमान के लिए कम से कम एक कार्यक्रम चुनें।"],
+    invalidSong: ["RSVP की पुष्टि करें", "कृपया गाने का अनुरोध २,००० अक्षरों से कम रखें।"],
+    invalidEmail: ["RSVP की पुष्टि करें", "कृपया सही ईमेल पता दर्ज करें।"],
     success: ["RSVP प्राप्त हुआ", isSupabase ? "आपका उत्तर सहेज लिया गया है। दिए गए पते पर पुष्टि ईमेल भेजने के लिए तैयार है।" : "आपका उत्तर प्राप्त हो गया है। हमें बताने के लिए धन्यवाद।"],
   },
 };
@@ -244,7 +246,8 @@ function renderConfirmation() {
   const roomLink = document.createElement("a"); roomLink.id = "rsvp-room-block"; roomLink.className = "rsvp-room-button";
   roomLink.href = roomBlockUrl; roomLink.target = "_blank"; roomLink.rel = "noopener noreferrer";
   roomLink.textContent = copy.bookRoom;
-  nextStep.append(stepLabel, roomHeading, roomHelp, roomLink); confirmationCard.append(nextStep);
+  const roomNote = document.createElement("p"); roomNote.className = "rsvp-room-note"; roomNote.textContent = copy.roomBookingNote;
+  nextStep.append(stepLabel, roomHeading, roomHelp, roomLink, roomNote); confirmationCard.append(nextStep);
 }
 addGuestButton.addEventListener("click", addGuest);
 form.addEventListener("input", () => { if (!submitting && rsvpState !== "idle") setRsvpState("idle"); });
