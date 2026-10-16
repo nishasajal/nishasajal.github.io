@@ -183,23 +183,25 @@ button:disabled {
   transform: translateY(-1px);
 }
 .rsvp-room-button:active { transform: translateY(0); }
-.rsvp-room-before-confirm {
-  margin-top: 4px;
+.venue-room-booking {
+  margin-top: 20px;
   padding: 18px;
   border: 1px solid #b8902f66;
   border-radius: 6px;
   background: #f8f5ee;
 }
-.rsvp-room-before-confirm h3 { margin-top: 0; font-size: 26px; }
-.rsvp-room-before-confirm .rsvp-room-button {
+.venue-room-booking h3 { margin-top: 0; font-size: 26px; }
+.venue-room-booking .rsvp-room-button {
   background: transparent;
   color: #1e2a4f;
 }
-.rsvp-room-before-confirm .rsvp-room-button:hover,
-.rsvp-room-before-confirm .rsvp-room-button:focus-visible { background: #efe7d9; }
+.venue-room-booking .rsvp-room-button:hover,
+.venue-room-booking .rsvp-room-button:focus-visible { background: #efe7d9; }
 
 #rsvp {
+  margin-top: 40px;
   padding-bottom: 40px;
+  scroll-margin-top: 24px;
 }
 .rsvp-help {
   margin-top: 20px;
@@ -282,6 +284,30 @@ html[lang="hi"] #rsvp-submit-btn {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* The opening blessing fades as the doors begin to open. */
+.hero-blessing {
+  position: absolute;
+  z-index: 31;
+  top: clamp(76px, 12svh, 112px);
+  right: 20px;
+  left: 20px;
+  color: #fff8e9;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(26px, 6.4vw, 42px);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+  text-shadow: 0 1px 4px #302116, 0 2px 12px #302116cc;
+  pointer-events: none;
+  transition: opacity 900ms ease, transform 900ms ease, visibility 0s 900ms;
+}
+.door-open .hero-blessing {
+  opacity: 0;
+  transform: translateY(-6px);
+  visibility: hidden;
 }
 
 /* Family names appear beneath the couple as the opening doors reveal. */

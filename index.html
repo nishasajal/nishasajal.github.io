@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./styles.css" data-precedence="default" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=Great+Vibes&amp;family=Karla:wght@300;400;500&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,500&amp;family=Great+Vibes&amp;family=Karla:wght@300;400;500&amp;display=swap"
       data-precedence="default"
     />
     <title>Nisha &amp; Sajal · Lansdowne Wedding 2027</title>
@@ -32,11 +32,11 @@
       crossorigin="anonymous"
     />
     <link rel="icon" href="./assets/sajni-monogram.png" type="image/png" />
-    <link rel="stylesheet" href="./enhancements.css?v=room-simple" />
+    <link rel="stylesheet" href="./enhancements.css?v=blessing-venue-rsvp" />
     <script src="./config.js" defer></script>
     <script src="./event-audio.js?v=sajni-continuous" defer></script>
     <script src="./app.js?v=sangeet-details" defer></script>
-    <script src="./rsvp.js?v=room-simple" defer></script>
+    <script src="./rsvp.js?v=venue-room-booking" defer></script>
   </head>
   <body>
     <main class="relative min-h-screen bg-background">
@@ -60,6 +60,7 @@
           alt="Tap to Open"
           class="absolute inset-0 z-20 h-full w-full object-cover transition-opacity duration-700 opacity-100"
         />
+        <p class="hero-blessing">Om ganesha namah</p>
         <div
           aria-hidden="true"
           class="absolute inset-0 z-25 transition-opacity duration-1000 opacity-0"
@@ -416,7 +417,7 @@
           >
         </article>
       </section>
-      <section id="venue" class="px-6 py-16">
+      <section id="venue" class="venue-rsvp px-6 pt-16">
         <div class="reveal mx-auto max-w-md text-center">
           <p class="eyebrow" data-i18n="comeCelebrate">
             Come celebrate with us
@@ -433,6 +434,10 @@
             loading="lazy"
             class="mt-8 w-full rounded-sm"
           />
+          <section class="rsvp-next-step venue-room-booking" aria-labelledby="rsvp-room-heading">
+            <h3 id="rsvp-room-heading" data-rsvp-label="bookStay">Hotel room booking</h3>
+            <a id="rsvp-room-block" class="rsvp-room-button" href="https://book.passkey.com/e/51354114" target="_blank" rel="noopener noreferrer" data-rsvp-label="bookRoom">Book a hotel room</a>
+          </section>
           <p class="mt-5 text-sm text-muted-foreground" data-i18n="teaNote">
             44050 Woodridge Pkwy, Leesburg, VA 20176
           </p>
@@ -445,10 +450,7 @@
             >Open in Maps</a
           >
         </div>
-      </section>
-
-      <section id="rsvp" class="px-6 pt-16 pb-24">
-        <div class="reveal mx-auto max-w-md">
+        <div id="rsvp" class="reveal mx-auto max-w-md">
           <div class="text-center">
             <p class="wedding-hashtag" lang="en" translate="no">#SajNi</p>
             <h2 class="text-3xl text-aegean-deep">Confirm your attendance</h2>
@@ -473,10 +475,6 @@
               <span class="eyebrow" data-rsvp-label="song">What song will get you on the dance floor?</span>
               <input name="song" maxlength="2000" class="w-full rounded-sm border border-input bg-card px-4 py-3 text-sm text-foreground outline-none focus:border-aegean" />
             </label>
-            <section class="rsvp-next-step rsvp-room-before-confirm" aria-labelledby="rsvp-room-heading">
-              <h3 id="rsvp-room-heading" data-rsvp-label="bookStay">Hotel room booking</h3>
-              <a id="rsvp-room-block" class="rsvp-room-button" href="https://book.passkey.com/e/51354114" target="_blank" rel="noopener noreferrer" data-rsvp-label="bookRoom">Book a hotel room</a>
-            </section>
             <button type="submit" id="rsvp-submit-btn" aria-describedby="rsvp-status" class="mt-3 rounded-sm bg-aegean px-6 py-4 text-xs tracking-[0.28em] text-primary-foreground uppercase">Confirm RSVP</button>
             <p id="rsvp-status" class="rsvp-status" role="status" aria-live="polite" aria-atomic="true"></p>
             <p id="rsvp-note" class="text-xs text-muted-foreground"></p>

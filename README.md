@@ -14,13 +14,13 @@ Open http://localhost:5173. Set `PORT` to use another port.
 
 ## Features
 
-- Animated invitation doorway with the parents’ names beneath the couple and a background music toggle
+- Animated invitation doorway with an italic “Om ganesha namah” blessing that fades as the doors open, the parents’ names beneath the couple, and a background music toggle
 - English/Hindi text switch
 - A compact second slide with gold scratch circles and the countdown beneath, leading directly into Haldi; Enter/Space keyboard support for the scratch reveal
 - Countdown to the celebrations on January 30, 2027 at 11am in Virginia
 - Venue map link, event dress codes, RSVP and the wedding planner’s company and email contact
 - Named party RSVPs, per-guest event choices, Supabase storage and Gmail confirmation emails
-- A clearly labeled hotel room booking link appears above Confirm RSVP and remains available after success; hotel reservations are separate from the RSVP, and confirmation emails include the booking link
+- The Lansdowne photo, hotel room booking link and RSVP form share one section; booking is also available after confirmation and in the confirmation email
 - Scroll reveals, confetti, responsive layout, and reduced-motion support
 
 ## Editing

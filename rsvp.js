@@ -235,10 +235,10 @@ function renderConfirmation() {
   counts.textContent = ["haldi", "sangeet", "wedding"].map((id) => `${copy[id]}: ${submittedData.guests.filter((g) => g.events.includes(id)).length}`).join(" · ");
   confirmationCard.append(counts, status);
   const nextStep = document.createElement("section"); nextStep.className = "rsvp-next-step";
-  nextStep.setAttribute("aria-labelledby", "rsvp-room-heading");
+  nextStep.setAttribute("aria-labelledby", "rsvp-confirmed-room-heading");
   const stepLabel = document.createElement("p"); stepLabel.className = "eyebrow"; stepLabel.textContent = copy.nextStep;
-  const roomHeading = document.createElement("h4"); roomHeading.id = "rsvp-room-heading"; roomHeading.textContent = copy.bookStay;
-  const roomLink = document.createElement("a"); roomLink.id = "rsvp-room-block"; roomLink.className = "rsvp-room-button";
+  const roomHeading = document.createElement("h4"); roomHeading.id = "rsvp-confirmed-room-heading"; roomHeading.textContent = copy.bookStay;
+  const roomLink = document.createElement("a"); roomLink.id = "rsvp-confirmed-room-block"; roomLink.className = "rsvp-room-button";
   roomLink.href = roomBlockUrl; roomLink.target = "_blank"; roomLink.rel = "noopener noreferrer";
   roomLink.textContent = copy.bookRoom;
   nextStep.append(stepLabel, roomHeading, roomLink); confirmationCard.append(nextStep);
