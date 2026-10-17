@@ -340,7 +340,7 @@ html[lang="hi"] #rsvp-submit-btn {
   margin-top: 28px;
   color: #fff;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(19px, 3.8vw, 23px);
+  font-size: clamp(13px, 4.2vw, 23px);
   font-weight: 500;
   line-height: 1.4;
   text-shadow: 0 1px 5px #000, 0 2px 14px #0009;
@@ -353,7 +353,7 @@ html[lang="hi"] #rsvp-submit-btn {
 .hero-parent-pair {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   column-gap: 0.3em;
 }
 .hero-parent-pair > span {
@@ -361,14 +361,14 @@ html[lang="hi"] #rsvp-submit-btn {
 }
 html[lang="hi"] .hero-parents {
   font-family: serif;
-  font-size: clamp(16px, 3.4vw, 21px);
+  font-size: clamp(14px, 4.3vw, 21px);
   line-height: 1.65;
 }
 @media (max-height: 500px) {
   .hero-copy { padding: 52px 20px 64px; }
   .hero-copy h1 { font-size: 44px; }
   .hero-copy > .eyebrow { margin-top: 10px; }
-  .hero-parents { gap: 6px; margin-top: 16px; font-size: 18px; }
+  .hero-parents { gap: 6px; margin-top: 16px; font-size: clamp(13px, 4.2vw, 18px); }
 }
 
 /* One compact invitation slide: scratch the date, then count down to Haldi. */
