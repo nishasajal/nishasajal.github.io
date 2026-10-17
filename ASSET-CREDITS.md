@@ -1,8 +1,21 @@
 # Added artwork and event music
 
-## Opening Ganesha image
+## Opening Ganesh ji wedding-card motif
 
-`assets/ganesha-ivory.png` is an original transparent PNG generated with the built-in imagegen tool on October 17, 2026 and approved by the user. It appears beneath “Om ganesha namah” and fades with the blessing when the doors open.
+`assets/ganesha-invitation.svg` adapts **Lord Ganesha** by **gsagri04**:
+https://openclipart.org/detail/173898/lord-ganesha
+
+The artist describes the artwork as traced from their wedding card. Openclipart
+releases its artwork into the public domain (CC0): https://openclipart.org/share
+Downloaded October 17, 2026 from https://openclipart.org/download/173898.
+The original vector shapes and proportions are preserved. The colour is changed
+to `#fff8e9` at full opacity to match “Om ganesha namah”; editor metadata is
+removed and the SVG contains only its title, description and vector geometry.
+It stays small, centred beneath the blessing and fades with it when the doors open.
+
+## Archived sculptural Ganesha image
+
+`assets/ganesha-ivory.png` is an original transparent PNG generated with the built-in imagegen tool on October 17, 2026 and initially approved by the user. It is archived and has been replaced on the invitation by the wedding-card motif above.
 
 Final generation prompt:
 

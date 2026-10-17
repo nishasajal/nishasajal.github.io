@@ -315,7 +315,7 @@ html[lang="hi"] #rsvp-submit-btn {
   height: clamp(40px, 9svh, 76px);
   margin: 6px auto 0;
   object-fit: contain;
-  filter: drop-shadow(0 2px 5px #30211655);
+  filter: drop-shadow(0 1px 4px #302116) drop-shadow(0 2px 12px #302116cc);
 }
 
 /* Family names appear beneath the couple as the opening doors reveal. */
