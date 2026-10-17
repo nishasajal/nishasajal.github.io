@@ -309,6 +309,14 @@ html[lang="hi"] #rsvp-submit-btn {
   transform: translateY(-6px);
   visibility: hidden;
 }
+.hero-ganesha {
+  display: block;
+  width: auto;
+  height: clamp(70px, 17svh, 148px);
+  margin: 10px auto 0;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px #30211655);
+}
 
 /* Family names appear beneath the couple as the opening doors reveal. */
 .hero-copy {

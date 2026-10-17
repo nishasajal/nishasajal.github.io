@@ -1,5 +1,13 @@
 # Added artwork and event music
 
+## Opening Ganesha image
+
+`assets/ganesha-ivory.png` is an original transparent PNG generated with the built-in imagegen tool on October 17, 2026 and approved by the user. It appears beneath “Om ganesha namah” and fades with the blessing when the doors open.
+
+Final generation prompt:
+
+> Use case: stylized-concept. Asset type: a small elegant devotional image for the opening of an Indian wedding invitation website. Create a beautiful respectful white Lord Ganesha, seated front-facing in a graceful traditional pose, recognizable elephant head, wide ears, gently curved trunk, serene expression, tasteful small crown, four arms with one front palm raised in blessing and another holding a modak. Style: finely carved ivory-white marble bas-relief with soft photographic sculptural shading, refined and peaceful, simple enough to remain clear when displayed only 110–140 pixels wide. Color palette: exclusively warm white and very pale ivory, subtle gray-white shading; luminous white edges so the figure reads clearly over a richly colored wooden door and green foliage. Composition: one centered complete seated figure, compact upright silhouette, ample separation between arms, modest simple lotus base, fills approximately 85% of a square image. Background: genuine transparent alpha, no background color or scene, no white rectangle, no checkerboard baked into pixels. No text, no lettering, no Om symbol, no border, no frame, no extra objects or characters. Produce a polished transparent PNG website asset.
+
 ## Monogram and hashtag
 
 `assets/sajni-monogram.png` is a transparent derivative of the N–heart–S logo in
