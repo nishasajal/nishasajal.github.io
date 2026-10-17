@@ -312,8 +312,8 @@ html[lang="hi"] #rsvp-submit-btn {
 .hero-ganesha {
   display: block;
   width: auto;
-  height: clamp(56px, 13svh, 112px);
-  margin: 8px auto 0;
+  height: clamp(40px, 9svh, 76px);
+  margin: 6px auto 0;
   object-fit: contain;
   filter: drop-shadow(0 2px 5px #30211655);
 }
