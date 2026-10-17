@@ -2,7 +2,7 @@
 // Run prepareWeddingEmailWorker, register its printed hash in Supabase, then installWeddingEmailTrigger.
 var WEDDING_SUPABASE_URL = 'https://vtaojbbnrftqqhyqodum.supabase.co';
 var WEDDING_PUBLISHABLE_KEY = 'sb_publishable_r99jzYUDLr0QeOS9rjQ3Dw_5Z9GwP2A';
-var WEDDING_SITE = 'https://rishimaheshwari.github.io/nisha-sajal-wedding/';
+var WEDDING_SITE = 'https://nishasajal.github.io/';
 var WEDDING_ROOM_BLOCK = 'https://book.passkey.com/e/51354114';
 
 function prepareWeddingEmailWorker() {
