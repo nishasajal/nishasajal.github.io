@@ -9,7 +9,7 @@ Each receipt includes every named guest's response, a next-step booking button f
 ## Setup or recovery
 
 1. Apply the SQL migrations in filename order in the project's SQL editor. For an existing installation, apply only unapplied migrations; do not rerun table creation migrations.
-2. Copy `Code.gs` into a private Apps Script project owned by the desired sender. `appsscript.json` documents the three required scopes: sending mail, external requests and installing a trigger. Authorize them with that Google account.
+2. Copy `Code.gs` into a private Apps Script project owned by the desired sender. `appsscript.json` documents the required scopes: sending mail, external requests, installing triggers and (for the optional Sheet mirror) spreadsheets. Authorize them with that Google account.
 3. Run `prepareWeddingEmailWorker`. It generates a private key in Script Properties and logs only the hash. Do not copy or publish the actual key.
 4. Register the printed hash in the private database table:
 
@@ -30,3 +30,13 @@ Check the Apps Script **Executions** and **Triggers** screens for errors. In Sup
 To pause new sends, set `enabled=false` on `nisha_sajal_email_worker`. To retry a failed reply after fixing the cause, reset `email_attempts=0` and `email_attempted_at=null` for that specific failed submission in the dashboard. Do not reset a sent row or erase its sent marker to retry a status update.
 
 Unit tests use mocked mail delivery. SQL access tests roll back their fixtures and never send emails. No test messages are sent to real participants.
+
+## Private Google Sheet mirror
+
+Add `SheetSync.gs` to the same private project after applying `20261017010000_rsvp_sheet_export.sql`. Run `installWeddingSheetSync` and authorize Google Sheets access. It creates **Nisha & Sajal — RSVP confirmations**, stores its ID in Script Properties, imports existing responses and installs one five-minute trigger. Its execution log prints the Sheet URL, never the worker key or guest details. Re-running setup reuses the same file and trigger.
+
+**Summary** shows RSVP parties, guest and event totals, confirmation status and last successful refresh in Eastern time. **Guests** has one row per named guest, their attendance and events, party contact email, song request, confirmation status and submission/sent timestamps. Party-level fields repeat for each member; the summary counts emails once per party using the hidden guest order. IDs are hidden for reconciliation, not deleted.
+
+This is a private, one-way mirror. Editing the Sheet does not update Supabase, and owned data cells are replaced on refresh. The script does not share the file or publish it on the wedding site. Guest text is escaped so it cannot execute spreadsheet formulas. A malformed or failed export leaves the last good guest data in place and marks the refresh as failed. Each snapshot is checked against database counts before writing and against Sheet totals afterward. Full snapshots include more than the REST default row limit.
+
+The export uses the existing private worker key; the publishable website key alone cannot read it. It does not claim, send or acknowledge any email. The sync shares a lock with the one-minute mail worker and skips a cycle if that worker is busy. If the worker is disabled in Supabase, the Sheet stops refreshing too. Check **Executions** for failures and the last refresh time in Summary. Remove only the `syncWeddingRsvpsToSheet` trigger to pause the Sheet while keeping email confirmations active.
