@@ -16,7 +16,7 @@ Open http://localhost:5173. Set `PORT` to use another port.
 
 Published invitation: https://nishasajal.github.io/ (GitHub Pages repository: `nishasajal/nishasajal.github.io`).
 
-- Animated invitation doorway with an italic “Om ganesha namah” blessing that fades as the doors open, the parents’ names beneath the couple, and a background music toggle
+- Animated invitation doorway with an italic “Om ganeshaya namah” blessing that fades as the doors open, the parents’ names beneath the couple, and a background music toggle
 - English/Hindi text switch
 - A compact second slide with gold scratch circles and the countdown beneath, leading directly into Haldi; Enter/Space keyboard support for the scratch reveal
 - Countdown to the celebrations on January 30, 2027 at 11am in Virginia
