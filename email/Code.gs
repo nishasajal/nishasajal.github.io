@@ -4,7 +4,7 @@ var WEDDING_SUPABASE_URL = 'https://vtaojbbnrftqqhyqodum.supabase.co';
 var WEDDING_PUBLISHABLE_KEY = 'sb_publishable_r99jzYUDLr0QeOS9rjQ3Dw_5Z9GwP2A';
 var WEDDING_SITE = 'https://nishasajal.github.io/';
 var WEDDING_ROOM_BLOCK = 'https://book.passkey.com/e/51354114';
-var WEDDING_AIRPORT_NOTE = '* Closest airport: Washington Dulles (IAD), approximately 12 miles / 20 minutes from Lansdowne Resort. Reagan National (DCA) is approximately 45–60 minutes away by car. Travel times vary with traffic.';
+var WEDDING_AIRPORT_NOTE = '* Closest airport: Washington Dulles (IAD), approximately 12 miles / 20 minutes from Lansdowne Resort. Reagan National (DCA) is approximately 45 minutes away by car. Travel times vary with traffic.';
 
 function prepareWeddingEmailWorker() {
   var properties = PropertiesService.getScriptProperties();

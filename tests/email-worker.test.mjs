@@ -27,7 +27,7 @@ test('confirmation includes the room-block next step and airport guidance in HTM
  assert.ok(message.html.indexOf('Hotel room booking') < message.html.indexOf('Saturday, January 30'));
  for (const content of [message.html, message.text]) {
   assert.match(content, /Hotel room booking[\s\S]*\* Closest airport: Washington Dulles \(IAD\), approximately 12 miles \/ 20 minutes/);
-  assert.match(content, /Reagan National \(DCA\) is approximately 45–60 minutes away by car\. Travel times vary with traffic\./);
+  assert.match(content, /Reagan National \(DCA\) is approximately 45 minutes away by car\. Travel times vary with traffic\./);
  }
 });
 test('sends one message and records completion',()=>{
