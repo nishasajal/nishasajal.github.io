@@ -35,6 +35,7 @@ const rsvpLabels = {
     privateNote: "Your reply will be saved privately for the wedding organizers.", localNote: "Development preview: replies are saved locally.",
     thankYou: "Thank You", confirmation: "Your RSVP is confirmed", declined: "Unable to attend", summary: "Your party’s attendance",
     nextStep: "Next step", bookStay: "Wedding room block", bookRoom: "Hotel room booking",
+    airportNote: "* Closest airport: Washington Dulles (IAD), approximately 12 miles / 20 minutes from Lansdowne Resort. Reagan National (DCA) is approximately 45–60 minutes away by car. Travel times vary with traffic.",
     haldi: "Haldi", sangeet: "Sangeet", wedding: "Wedding & lunch",
     haldiDetails: "Jan 30 · 11am · Terrace Ballroom", sangeetDetails: "Jan 30 · 6–7pm: Cocktail hour; 7pm onwards: Dinner · Clubhouse Ballroom", weddingDetails: "Jan 31 · 10am, followed by lunch · Grand Ballroom",
   },
@@ -48,6 +49,7 @@ const rsvpLabels = {
     privateNote: "आपका उत्तर शादी के आयोजकों के लिए निजी रूप से सहेजा जाएगा।", localNote: "डेवलपमेंट प्रीव्यू: उत्तर स्थानीय रूप से सहेजे जाते हैं।",
     thankYou: "धन्यवाद", confirmation: "आपके RSVP की पुष्टि हो गई है", declined: "नहीं आ सकेंगे", summary: "आपके समूह की उपस्थिति",
     nextStep: "अगला कदम", bookStay: "शादी के लिए आरक्षित कमरे", bookRoom: "होटल के कमरे की बुकिंग",
+    airportNote: "* निकटतम हवाई अड्डा: वॉशिंगटन डलेस (IAD), लैंसडाउन रिज़ॉर्ट से लगभग १२ मील / २० मिनट की दूरी पर। रीगन नेशनल (DCA) से कार द्वारा लगभग ४५–६० मिनट लगते हैं। यात्रा का समय ट्रैफ़िक पर निर्भर करता है।",
     haldi: "हल्दी", sangeet: "संगीत", wedding: "विवाह और दोपहर का भोजन",
     haldiDetails: "३० जनवरी · सुबह ११ बजे · टेरेस बॉलरूम", sangeetDetails: "३० जनवरी · शाम ६–७ बजे: कॉकटेल आवर; शाम ७ बजे से: रात्रि भोज · क्लबहाउस बॉलरूम", weddingDetails: "३१ जनवरी · सुबह १० बजे, फिर दोपहर का भोजन · ग्रैंड बॉलरूम",
   },
@@ -241,7 +243,8 @@ function renderConfirmation() {
   const roomLink = document.createElement("a"); roomLink.id = "rsvp-confirmed-room-block"; roomLink.className = "rsvp-room-button";
   roomLink.href = roomBlockUrl; roomLink.target = "_blank"; roomLink.rel = "noopener noreferrer";
   roomLink.textContent = copy.bookRoom;
-  nextStep.append(stepLabel, roomHeading, roomLink); confirmationCard.append(nextStep);
+  const airportNote = document.createElement("p"); airportNote.className = "rsvp-airport-note"; airportNote.textContent = copy.airportNote;
+  nextStep.append(stepLabel, roomHeading, roomLink, airportNote); confirmationCard.append(nextStep);
 }
 addGuestButton.addEventListener("click", addGuest);
 form.addEventListener("input", () => { if (!submitting && rsvpState !== "idle") setRsvpState("idle"); });

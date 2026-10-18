@@ -24,6 +24,7 @@ Published invitation: https://nishasajal.github.io/ (GitHub Pages repository: `n
 - Named party RSVPs, per-guest event choices, Supabase storage and Gmail confirmation emails
 - The Lansdowne photo, hotel room booking link and RSVP form share one section; booking is also available after confirmation and in the confirmation email
 - Scroll reveals, confetti, responsive layout, and reduced-motion support
+- A small airport note beneath hotel booking buttons and in confirmation emails: IAD is closest (approximately 12 miles / 20 minutes); DCA approximately 45–60 minutes by car, depending on traffic. IAD distance and drive time are from [Lansdowne’s resort overview](https://lansdowneresort.com/resort/) and [FAQ](https://lansdowneresort.com/faq/), checked October 18, 2026. The DCA range includes the organizer’s 45-minute estimate and the resort’s approximately one-hour guidance.
 
 ## Editing
 

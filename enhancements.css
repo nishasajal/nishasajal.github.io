@@ -183,6 +183,15 @@ button:disabled {
   transform: translateY(-1px);
 }
 .rsvp-room-button:active { transform: translateY(0); }
+.rsvp-airport-note {
+  max-width: 42rem;
+  margin: 12px auto 0;
+  color: #746775;
+  font-size: 13px;
+  line-height: 1.65;
+  text-align: center;
+  text-wrap: pretty;
+}
 .venue-room-booking {
   margin-top: 20px;
   padding: 18px;
