@@ -291,6 +291,18 @@
     "en": "Mrs. Sumita Maheshwari",
     "hi": "श्रीमती सुमिता माहेश्वरी"
   },
+  "familyGreetings": {
+    "en": "With Greetings from:",
+    "hi": "शुभकामनाओं सहित:"
+  },
+  "paternalFamily": {
+    "en": "Paternal Family",
+    "hi": "पैतृक परिवार"
+  },
+  "maternalFamily": {
+    "en": "Maternal Family",
+    "hi": "मातृ परिवार"
+  },
   "plannerHelp": {
     "en": "For any help, please contact",
     "hi": "किसी भी सहायता के लिए संपर्क करें"

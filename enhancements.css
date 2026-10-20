@@ -212,6 +212,38 @@ button:disabled {
   padding-bottom: 40px;
   scroll-margin-top: 24px;
 }
+.rsvp-greetings {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #b8902f66;
+  text-align: center;
+}
+.rsvp-greetings h3 {
+  color: #1e2a4f;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  line-height: 1.25;
+}
+.rsvp-family { margin-top: 22px; }
+.rsvp-family h4 {
+  color: #625866;
+  font-size: 11px;
+  letter-spacing: .16em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+.rsvp-family ul { list-style: none; margin: 12px 0 0; padding: 0; }
+.rsvp-family li + li { margin-top: 12px; }
+.rsvp-family p {
+  margin: 0;
+  color: #8e6b58;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(18px, 4.8vw, 21px);
+  font-weight: 500;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+.rsvp-family .rsvp-family-children { margin-top: 3px; font-size: 18px; }
 .rsvp-help {
   margin-top: 20px;
   padding-top: 16px;

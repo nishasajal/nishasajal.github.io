@@ -32,10 +32,10 @@
       crossorigin="anonymous"
     />
     <link rel="icon" href="./assets/sajni-monogram.png" type="image/png" />
-    <link rel="stylesheet" href="./enhancements.css?v=airport-note" />
+    <link rel="stylesheet" href="./enhancements.css?v=family-greetings" />
     <script src="./config.js" defer></script>
     <script src="./event-audio.js?v=sajni-continuous" defer></script>
-    <script src="./app.js?v=sangeet-details" defer></script>
+    <script src="./app.js?v=family-greetings" defer></script>
     <script src="./rsvp.js?v=airport-times" defer></script>
   </head>
   <body>
@@ -483,6 +483,41 @@
             <p id="rsvp-status" class="rsvp-status" role="status" aria-live="polite" aria-atomic="true"></p>
             <p id="rsvp-note" class="text-xs text-muted-foreground"></p>
           </form>
+          <section class="rsvp-greetings" aria-labelledby="rsvp-greetings-title">
+            <h3 id="rsvp-greetings-title" data-i18n="familyGreetings">With Greetings from:</h3>
+            <div class="rsvp-family">
+              <h4 data-i18n="paternalFamily">Paternal Family</h4>
+              <ul lang="en" translate="no">
+                <li><p>Smt. Kanta Rani &amp; Shri V. N. Prasad Maheshwari</p></li>
+                <li>
+                  <p>Smt. Sumita &amp; Shri Sanjay Maheshwari</p>
+                  <p class="rsvp-family-children">Rishi</p>
+                </li>
+                <li>
+                  <p>Smt. Sangeeta &amp; Sudhir Maheshwari</p>
+                  <p class="rsvp-family-children">Angana &amp; Ayush</p>
+                </li>
+              </ul>
+            </div>
+            <div class="rsvp-family">
+              <h4 data-i18n="maternalFamily">Maternal Family</h4>
+              <ul lang="en" translate="no">
+                <li><p>Late Smt. Chandra Kanta &amp; Late Shri Gulab Chandra Jagetia</p></li>
+                <li>
+                  <p>Smt. Manju &amp; Shri Raj Kishore Malpani</p>
+                  <p class="rsvp-family-children">Charu, Richa &amp; Venkatesh</p>
+                </li>
+                <li>
+                  <p>Smt. Neelam &amp; Shri Ranjan Jagetia</p>
+                  <p class="rsvp-family-children">Riya &amp; Rahul</p>
+                </li>
+                <li>
+                  <p>Late Smt. Anjana &amp; Shri Sailesh Maheshwari</p>
+                  <p class="rsvp-family-children">Pooja &amp; Yash</p>
+                </li>
+              </ul>
+            </div>
+          </section>
           <aside class="rsvp-help" aria-labelledby="rsvp-help-title">
             <p data-i18n="plannerHelp">For any help, please contact</p>
             <h3 id="rsvp-help-title">
